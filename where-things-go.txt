@@ -1,6 +1,8 @@
 -- goes to config
 mpd/                      T
 i3/                       |
+kitty/                    |
+rofi/                     |
 fish/                     -> $HOME/.config
 
 -- i like to place it there and then use feh

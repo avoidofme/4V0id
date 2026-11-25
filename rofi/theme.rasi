@@ -1,0 +1,94 @@
+* {
+    fg:                 #dcd7ba;
+    bg:                 #1f1f28;
+    sel-fg:             #c8c093;
+    sel-bg:             #2d4f67;
+    red:                #c34043;
+    background-color:   transparent;
+    text-color:         var(fg);
+    scrollbar:          true;
+    highlight:          bold italic;
+}
+window {
+    width:              30.0000em ;
+    height:             100.0000% ;
+    location:           west;
+    anchor:             west;
+    border:             0px 2px 0px 0px;
+    border-color:       var(sel-bg);
+    text-color:         var(fg);
+}
+mode-switcher {
+    padding:            4px;
+    background-color:   var(bg);
+    border:             2px 0px 0px;
+}
+button selected {
+    border-color:       var(sel-bg);
+    text-color:         var(sel-fg);
+}
+inputbar {
+    padding:            4px;
+    background-color:   var(sel-bg);
+    text-color:         var(sel-fg);
+    children:           [ "prompt","textbox-prompt-sep","entry","case-indicator" ];
+}
+textbox-prompt-sep {
+    margin:             0px 0.3000em 0px 0px;
+    expand:             false;
+    str:                ":";
+    text-color:         var(sel-fg);
+}
+mainbox {
+    background-color:   var(bg);
+    expand:             true;
+    spacing:            0.4000em ;
+}
+listview {
+    padding:            0.0000em 0.4000em 0.0000em 1.0000em ;
+    scrollbar:          var(scrollbar);
+    lines:              0;
+}
+scrollbar {
+    background-color:   var(sel-bg);
+    width:              4px;
+    margin:             0 0 0 0.4000em;
+    padding:            0;
+    handle-width:       8px;
+    border:             0px;
+    handle-color:       var(sel-fg);
+}
+
+element-text {
+    background-color:   inherit;
+    text-color:         inherit;
+}
+element selected.normal {
+    background-color:   var(sel-bg);
+    text-color:         var(sel-fg);
+}
+element selected.active {
+    background-color:   var(sel-bg);
+    text-color:         var(sel-fg);
+}
+element selected.urgent {
+    background-color:   var(sel-bg);
+    text-color:         var(red);
+}
+element normal.active {
+    text-color:         var(fg);
+}
+element normal.urgent {
+    text-color:         var(red);
+}
+element alternate.active {
+    text-color:         var(fg);
+}
+element alternate.urgent {
+    text-color:         var(red);
+}
+error-message {
+    padding:            1.0000em;
+    background-color:   var(bg);
+    expand:             true;
+}
