@@ -1,0 +1,13 @@
+-- goes to config
+mpd/                  T
+i3/                   |
+fish/                 -> $HOME/.config
+
+-- if you use X11
+x11/xinitrc           ->  $HOME
+
+-- and touchpad on X11
+x11/30-touchpad.conf  ->  /etc/X11/xorg.conf.d/30-touchpad.conf
+
+-- docker
+docker/daemon.json    ->  /etc/docker/daemon.json

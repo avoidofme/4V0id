@@ -1,0 +1,27 @@
+#!/bin/sh
+
+xinitdir="/etc/X11/xinit"
+userresources="$HOME/.Xresources"
+
+if [ -f "$userresources" ]; then
+  if [ -x /usr/bin/cpp ]; then
+    "$xrdb" -merge "$userresources"
+  else
+    "$xrdb" -nocpp -merge "$userresources"
+  fi
+fi
+
+if [ -d "$xinitdir"/xinitrc.d ]; then
+  for f in "$xinitdir/xinitrc.d"/?*.sh; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+/usr/libexec/xfce-polkit &
+eval "$(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
+export SSH_AUTH_SOCK
+
+dbus-update-activation-environment --all &
+
+exec dbus-run-session i3
