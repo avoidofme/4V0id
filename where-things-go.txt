@@ -1,13 +1,16 @@
 -- goes to config
-mpd/                  T
-i3/                   |
-fish/                 -> $HOME/.config
+mpd/                      T
+i3/                       |
+fish/                     -> $HOME/.config
+
+-- i like to place it there and then use feh
+wallpaper/wallpaper.png   -> $HOME/.wallpaper.png
 
 -- if you use X11
-x11/xinitrc           ->  $HOME
+x11/xinitrc               ->  $HOME
 
 -- and touchpad on X11
-x11/30-touchpad.conf  ->  /etc/X11/xorg.conf.d/30-touchpad.conf
+x11/30-touchpad.conf      ->  /etc/X11/xorg.conf.d/30-touchpad.conf
 
 -- docker
-docker/daemon.json    ->  /etc/docker/daemon.json
+docker/daemon.json        ->  /etc/docker/daemon.json
